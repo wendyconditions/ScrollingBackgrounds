@@ -1,6 +1,14 @@
 jQuery(document).ready(function(){
-  $(window).scroll(function(e){
-  	parallaxScroll();
+	$('html, body').animate({
+			scrollTop: $('div#bg-3-4').offset().top+700
+		}, 15000);
+		
+	$(document).click(function(){
+		$('html, body').stop(true);
+	});
+	
+	$(window).scroll(function(e){
+		parallaxScroll();
 	});
 	 
 	function parallaxScroll(){
@@ -10,4 +18,4 @@ jQuery(document).ready(function(){
 		$('#parallax-bg-3').css('top',(0-(scrolled*.75))+'px');
 	}
  
- }); 
+ });  
